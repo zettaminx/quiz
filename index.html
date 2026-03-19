@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>정보보안기사 Master - Premium Quiz App</title>
+    <meta name="description" content="28개년 정보보안기사 실기 단답형 전수 퀴즈 모바일 앱">
+    
+    <!-- PWA & Mobile Optimization -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="보안기사">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2092/2092663.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- 과목 선택 화면 -->
+        <section id="selection-screen" class="screen">
+            <header>
+                <h1>🛡️ 보안기사 Master</h1>
+                <p class="subtitle">28개년 전수 실기 퀴즈</p>
+            </header>
+            <div id="category-list" class="scroll-container">
+                <!-- JS에서 동적 생성 -->
+            </div>
+        </section>
+
+        <!-- 퀴즈 화면 -->
+        <section id="quiz-screen" class="screen hidden">
+            <nav class="top-nav">
+                <button id="home-btn" class="icon-btn">🏠</button>
+                <div id="exam-info" class="badge">정보 없음</div>
+                <div style="display: flex; gap: 10px;">
+                    <button id="share-btn" class="icon-btn">🔗</button>
+                    <div id="progress-text">1 / 10</div>
+                </div>
+            </nav>
+            
+            <div class="main-content">
+                <p id="subject-label" class="subject-tag">과목명</p>
+                <div class="quiz-card" id="quiz-card">
+                    <div class="question-area">
+                        <span class="q-mark">Q.</span>
+                        <h2 id="question-text">문제가 여기에 표시됩니다.</h2>
+                    </div>
+                    <div id="answer-area" class="hidden">
+                        <div class="answer-box">
+                            <p class="label">정답</p>
+                            <h3 id="answer-text">정답 내용</h3>
+                        </div>
+                        <div class="commentary-box">
+                            <p class="label">해설</p>
+                            <p id="commentary-text">해설 내용이 여기에 나옵니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="bottom-actions">
+                <button id="action-btn" class="primary-btn">정답 확인</button>
+            </footer>
+        </section>
+
+        <!-- 로딩 오버레이 -->
+        <div id="loading" class="overlay">
+            <div class="spinner"></div>
+            <p>데이터 로딩 중...</p>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
